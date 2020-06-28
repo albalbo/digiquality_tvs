@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
 
-Genre = require('./models/genre')
+
 Book = require('./models/book')
 
 // connect to mongoose
@@ -25,6 +25,7 @@ app.get('/', function(req, res){
 });
 
 // Get all the genres
+/*
 app.get('/api/genres', function(req, res){
     Genre.getGenres(function(err, genres){
         if(err){
@@ -58,6 +59,7 @@ app.put('/api/genres/:_id', function(req, res){
         res.json(genre);
     });
 });
+*/
 
 // Update book
 app.put('/api/books/:_id', function(req, res){
@@ -105,6 +107,7 @@ app.get('/api/books/:_id', function(req, res){
 });
 
 // Delete genre
+/*
 app.delete('/api/genres/:_id', function(req, res){
     // req.body allows us to access everything coming from the forms into the genre object
     var id = req.params._id;
@@ -116,6 +119,7 @@ app.delete('/api/genres/:_id', function(req, res){
         res.json(genre);
     });
 });
+*/
 
 // Delete book
 app.delete('/api/books/:_id', function(req, res){
